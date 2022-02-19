@@ -6,8 +6,8 @@ import FeedbackContext from './context/FeedbackContext';
 import {useContext} from 'react';
 
 function FeedbackItem({item}){
-    const [rating,setRating]=useState(item.rating);
-    const [text,setText]=useState(item.text);
+    const [rating]=useState(item.rating);
+    const [text]=useState(item.text);
     const {handleDelete,handleEdit}=useContext(FeedbackContext);
 
     return(

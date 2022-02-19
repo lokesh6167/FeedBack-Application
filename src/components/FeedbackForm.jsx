@@ -10,16 +10,15 @@ function FeedbackForm(){
     const [message,setMessage]=useState("");
     const [rating,setRating]=useState(10);
     const {handleAdd,feedbackEdit,handleUpdate}=useContext(FeedbackContext);
-    useEffect(()=>{
+    useEffect((setBtnDisabled,setComment,setRating)=>{
         // console.log("I am feedback form");
         console.log("I am Comment:"+comment+"I am rating:"+rating);
         if(feedbackEdit.edit===true){
-            // console.log("I am inside condition")
-        setBtnDisabled(false);
-        setComment(feedbackEdit.item.text);
-        setRating(feedbackEdit.item.rating);
+            setBtnDisabled(false);
+            setComment(feedbackEdit.item.text);
+            setRating(feedbackEdit.item.rating);
         }
-    },[feedbackEdit])
+    },[comment, feedbackEdit, rating])
 
     const handleChange=(e)=>{
         if(comment===""){

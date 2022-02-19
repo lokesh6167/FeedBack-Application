@@ -6,7 +6,7 @@ function Post() {
     const status=200
     const navigate=useNavigate()
     
-    if(status==404){
+    if(status===404){
         return <Navigate to="/PageNotFound"/>
     }
     const handleNavigation=()=>{
